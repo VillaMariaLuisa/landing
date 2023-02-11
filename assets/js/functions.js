@@ -76,6 +76,40 @@ Table Of Content
     }
 }();
 
+function formatPhoneNumber(input) {
+  // Get the value of the input field
+  let phoneNumber = input.value;
+  
+  // Remove all non-digit characters from the phone number
+  phoneNumber = phoneNumber.replace(/\D/g, '');
+  
+  // Apply the phone number format (e.g. +1 123-456-7890)
+  let formattedPhoneNumber = '';
+  let phoneNumberLength = phoneNumber.length;
+  
+  if (phoneNumberLength >= 1) {
+    formattedPhoneNumber = '+' + phoneNumber.substring(0, 1);
+  }
+  
+  if (phoneNumberLength > 1) {
+    formattedPhoneNumber += ' ';
+    formattedPhoneNumber += phoneNumber.substring(1, 4);
+  }
+  
+  if (phoneNumberLength > 4) {
+    formattedPhoneNumber += '-';
+    formattedPhoneNumber += phoneNumber.substring(4, 7);
+  }
+  
+  if (phoneNumberLength > 7) {
+    formattedPhoneNumber += '-';
+    formattedPhoneNumber += phoneNumber.substring(7, 11);
+  }
+  
+  // Set the formatted phone number back to the input field
+  input.value = formattedPhoneNumber;
+}
+
 // Get CSS var value
 var ThemeColor = function () {
   return {

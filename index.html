@@ -62,7 +62,24 @@
     </div>
     <div class="offcanvas-body form-control-bg-light d-flex flex-column px-3">
       <!-- Form START -->
-      <form>
+      <form action="https://hooks.zapier.com/hooks/catch/8655269/3yqoykn/" method="post">
+        <!--guest name-->
+        <div class="mb-3">
+          <label class="form-label mb-0">Nombre</label>
+          <input type="text" class="form-control" placeholder="Nombre" />
+        </div>
+
+        <!--guest email-->
+        <div class="mb-3">
+          <label class="form-label mb-0">Correo electronico</label>
+          <input type="email" class="form-control" placeholder="Correo electronico" />
+        </div>
+
+        <!--guest phone-->
+        <div class="mb-3">
+          <label class="form-label mb-0">Teléfono</label>
+          <input type="tel"  pattern="[\+]?[0-9]{1,4}[\s]?[0-9]{6,14}" oninput="formatPhoneNumber(this)" class="form-control" placeholder="Teléfono" />
+        </div>
         <!-- Pickup -->
 
         <!-- Date -->
@@ -151,10 +168,11 @@
             </ul>
           </div>
         </div>
-
+        <!--post form content to url-->
+        
         <!-- Buttons -->
         <div class="text-center">
-          <button class="btn btn-primary-soft w-100 mb-0">
+          <button class="btn btn-primary-soft w-100 mb-0" type="submit">
             Pregunta por nuestra disponibilidad
           </button>
         </div>
@@ -201,19 +219,19 @@
           <!-- Main navbar nav -->
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link" href="index.html">Inicio</a>
+              <a class="nav-link" href="#main-banner">Inicio</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="about.html">Nosotros</a>
+              <a class="nav-link" href="#about">Nosotros</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="rooms.html">Habitaciones</a>
+              <a class="nav-link" href="#experiences">Experiencias</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="gallery.html">Galeria</a>
+              <a class="nav-link" href="#rooms">Habitaciones</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contacto</a>
+              <a class="nav-link" href="#gallery">Galeria</a>
             </li>
           </ul>
         </div>
@@ -236,7 +254,7 @@
   <main>
     <!-- =======================
 Main banner START -->
-    <section class="position-relative py-8 py-sm-9" style="
+    <section id="main-banner" class="position-relative py-8 py-sm-9" style="
           background-image: url(assets/images/category/hotel/resort/bg-01.jpg);
           background-position: center left;
           background-size: cover;
@@ -252,7 +270,9 @@ Main banner START -->
             <h5 class="text-white mb-3">
               Un mundo de tranquilidad te espera
             </h5>
-            <a href="#" class="btn btn-lg btn-dark mb-0">RESERVA YA</a>
+            <button id="reserve-now-button-landing" href="#" class="btn btn-lg btn-dark mb-0" type="button"
+              data-bs-toggle="offcanvas" data-bs-target="#offcanvasBookstay"><i
+                class="bi bi-calendar-week me-2"></i>RESERVA YA</button>
           </div>
         </div>
         <!-- Row END -->
@@ -263,7 +283,7 @@ Main banner END -->
 
     <!-- =======================
 About START -->
-    <section class="pt-5 pt-md-8 pb-0">
+    <section id="about" class="pt-5 pt-md-8 pb-0">
       <div class="container z-index-9">
         <div class="row">
           <div class="col-lg-10 m-auto text-center">
@@ -349,7 +369,7 @@ About END -->
 
     <!-- =======================
 Experience START -->
-    <section class="pt-5 pt-md-8 pb-0">
+    <section id="experiences" class="pt-5 pt-md-8 pb-0">
       <div class="container-fluid px-lg-5">
         <!-- Title -->
         <div class="row mb-4">
@@ -548,7 +568,7 @@ Experience END -->
 
     <!-- =======================
 Rooms START -->
-    <section class="pt-5 pt-md-8 pb-0">
+    <section id="rooms" class="pt-5 pt-md-8 pb-0">
       <div class="container-fluid px-lg-5">
         <!-- Title -->
         <div class="row mb-4">
@@ -608,7 +628,8 @@ Rooms START -->
                             </ul>
 
                             <!-- Buttons -->
-                            <a href="#" class="btn btn-light mb-0">Reserve
+                            <a href="#" class="btn btn-light mb-0" type="button" data-bs-toggle="offcanvas"
+                              data-bs-target="#offcanvasBookstay" aria-controls="offcanvasBookstay">Reserve
                               <i class="fa-solid fa-arrow-right-long"></i></a>
                           </div>
                         </div>
@@ -654,7 +675,8 @@ Rooms START -->
                             </ul>
 
                             <!-- Buttons -->
-                            <a href="#" class="btn btn-light mb-0">Reserve
+                            <a href="#" class="btn btn-light mb-0" type="button" data-bs-toggle="offcanvas"
+                              data-bs-target="#offcanvasBookstay" aria-controls="offcanvasBookstay">Reserve
                               <i class="fa-solid fa-arrow-right-long"></i></a>
                           </div>
                         </div>
@@ -700,7 +722,8 @@ Rooms START -->
                             </ul>
 
                             <!-- Buttons -->
-                            <a href="#" class="btn btn-light mb-0">Reserve
+                            <a href="#" class="btn btn-light mb-0" type="button" data-bs-toggle="offcanvas"
+                              data-bs-target="#offcanvasBookstay" aria-controls="offcanvasBookstay">Reserve
                               <i class="fa-solid fa-arrow-right-long"></i></a>
                           </div>
                         </div>
@@ -728,7 +751,7 @@ Rooms END -->
 
     <!-- =======================
 Offers START -->
-    <section class="pt-5 pt-md-8 pb-0">
+    <section id="gallery" class="pt-5 pt-md-8 pb-0">
       <div class="container-fluid px-lg-5">
         <!-- Title -->
         <div class="row mb-4">

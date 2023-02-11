@@ -76,6 +76,32 @@ Table Of Content
     }
 }();
 
+document.getElementById("submit-availability-btn").addEventListener("click", function(event) {
+  event.preventDefault(); // prevent default form submission behavior
+
+  // Get form data
+  var form = document.getElementById("availability-form");
+  var formData = new FormData(form);
+
+  // Send form data using Fetch API
+  fetch("https://hooks.zapier.com/hooks/catch/8655269/3yqoykn/", {
+    method: "POST",
+    body: new FormData(form)
+  })
+  .then(function(response) {
+    if (response.ok) {
+      // Display thank you message
+      var thankYouMessage = document.getElementById("message");
+      thankYouMessage.style.display = "block";
+    }
+  })
+  .catch(function(error) {
+    console.error("Error submitting form:", error);
+    form.appendChild(document.createTextNode("tuvimos un problema, por favor intenta de nuevo."));
+  });
+});
+
+
 function formatPhoneNumber(input) {
   // Get the value of the input field
   let phoneNumber = input.value;

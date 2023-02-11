@@ -62,46 +62,51 @@
     </div>
     <div class="offcanvas-body form-control-bg-light d-flex flex-column px-3">
       <!-- Form START -->
-      <form action="https://hooks.zapier.com/hooks/catch/8655269/3yqoykn/" method="post">
+      <form id="availability-form">
         <!--guest name-->
         <div class="mb-3">
-          <label class="form-label mb-0">Nombre</label>
-          <input type="text" class="form-control" placeholder="Nombre" />
+          <label for="name" class="form-label mb-0">Nombre</label>
+          <input id="name" name="name" type="text" class="form-control" placeholder="Nombre" />
+        </div>
+
+        <div class="mb-3">
+          <label for="lastname" class="form-label mb-0">Nombre</label>
+          <input id="lastname" name="lastname" type="text" class="form-control" placeholder="Nombre" />
         </div>
 
         <!--guest email-->
         <div class="mb-3">
-          <label class="form-label mb-0">Correo electronico</label>
-          <input type="email" class="form-control" placeholder="Correo electronico" />
+          <label for="email" class="form-label mb-0">Correo electronico</label>
+          <input id="email" name="email" type="email" class="form-control" placeholder="Correo electronico" />
         </div>
 
         <!--guest phone-->
         <div class="mb-3">
-          <label class="form-label mb-0">Teléfono</label>
-          <input type="tel"  pattern="[\+]?[0-9]{1,4}[\s]?[0-9]{6,14}" oninput="formatPhoneNumber(this)" class="form-control" placeholder="Teléfono" />
+          <label for="phone" class="form-label mb-0">Teléfono</label>
+          <input id="phone" name="phone" type="tel"  pattern="[\+]?[0-9]{1,4}[\s]?[0-9]{6,14}" class="form-control" placeholder="Teléfono" />
         </div>
         <!-- Pickup -->
 
         <!-- Date -->
         <div class="mb-3">
-          <label class="form-label mb-0">Llegada</label>
-          <input type="text" class="form-control flatpickr flatpickr-input" data-date-format="d M Y"
+          <label for="arrival-date" class="form-label mb-0">Llegada</label>
+          <input id="arrival-date" name="arrival-date" type="text" class="form-control flatpickr flatpickr-input" data-date-format="d M Y"
             placeholder="Fecha de Entrada" readonly="readonly" />
         </div>
 
         <!-- Date -->
         <div class="mb-3">
-          <label class="form-label mb-0">Salida</label>
-          <input type="text" class="form-control flatpickr flatpickr-input" data-date-format="d M Y"
+          <label for="departure-date" class="form-label mb-0">Salida</label>
+          <input id="departure-date" name="departure-date" type="text" class="form-control flatpickr flatpickr-input" data-date-format="d M Y"
             placeholder="Fecha de salida" readonly="readonly" />
         </div>
 
         <!-- Occupant -->
         <div class="mb-3">
           <!-- Dropdown input -->
-          <label class="form-label mb-0">Huéspedes &amp; Habitaciones</label>
+          <label for="occupants" class="form-label mb-0">Huéspedes &amp; Habitaciones</label>
           <div class="dropdown guest-selector me-2">
-            <input type="text" class="form-guest-selector form-control selection-result"
+            <input id="occupants" name="occupants" type="text" class="form-guest-selector form-control selection-result"
               value="2 Huéspedes 1 Habitaciones" data-bs-auto-close="outside" data-bs-toggle="dropdown" />
 
             <!-- dropdown items -->
@@ -172,9 +177,12 @@
         
         <!-- Buttons -->
         <div class="text-center">
-          <button class="btn btn-primary-soft w-100 mb-0" type="submit">
+          <button class="btn btn-primary-soft w-100 mb-0" id="submit-availability-btn">
             Pregunta por nuestra disponibilidad
           </button>
+        </div>
+        <div id="message" class="alert alert-success" role="alert" style="display: none;">
+          <p>Gracias por contactarnos, nos pondremos en contacto con usted lo antes posible.</p>
         </div>
       </form>
       <!-- Form END -->

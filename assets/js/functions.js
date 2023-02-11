@@ -77,11 +77,17 @@ Table Of Content
 }();
 
 document.getElementById("submit-availability-btn").addEventListener("click", function(event) {
-  event.preventDefault(); // prevent default form submission behavior
+  //event.preventDefault(); // prevent default form submission behavior
 
   // Get form data
   var form = document.getElementById("availability-form");
-  var formData = new FormData(form);
+
+  if (!form.checkValidity()) {
+    // If the form is invalid, stop the form submission
+    return;
+  }
+
+  event.preventDefault(); // prevent default form submission behavior only after form is valid
 
   // Send form data using Fetch API
   fetch("https://hooks.zapier.com/hooks/catch/8655269/3yqoykn/", {

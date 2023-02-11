@@ -66,24 +66,24 @@
         <!--guest name-->
         <div class="mb-3">
           <label for="name" class="form-label mb-0">Nombre</label>
-          <input id="name" name="name" type="text" class="form-control" placeholder="Nombre" />
+          <input id="name" name="name" type="text" class="form-control" placeholder="Nombre" required/>
         </div>
 
         <div class="mb-3">
           <label for="lastname" class="form-label mb-0">Apellido</label>
-          <input id="lastname" name="lastname" type="text" class="form-control" placeholder="Apellido" />
+          <input id="lastname" name="lastname" type="text" class="form-control" placeholder="Apellido" required/>
         </div>
 
         <!--guest email-->
         <div class="mb-3">
           <label for="email" class="form-label mb-0">Correo electronico</label>
-          <input id="email" name="email" type="email" class="form-control" placeholder="Correo electronico" />
+          <input id="email" name="email" type="email" class="form-control" placeholder="Correo electronico" required/>
         </div>
 
         <!--guest phone-->
         <div class="mb-3">
           <label for="phone" class="form-label mb-0">Teléfono</label>
-          <input id="phone" name="phone" type="tel"  pattern="[\+]?[0-9]{1,4}[\s]?[0-9]{6,14}" class="form-control" placeholder="Teléfono" />
+          <input id="phone" name="phone" type="tel"  pattern="[\+]?[0-9]{1,4}[\s]?[0-9]{6,14}" class="form-control" placeholder="Teléfono" required/>
         </div>
         <!-- Pickup -->
 
@@ -91,14 +91,14 @@
         <div class="mb-3">
           <label for="arrival-date" class="form-label mb-0">Llegada</label>
           <input id="arrival-date" name="arrival-date" type="text" class="form-control flatpickr flatpickr-input" data-date-format="d M Y"
-            placeholder="Fecha de Entrada" readonly="readonly" />
+            placeholder="Fecha de Entrada" readonly="readonly" required/>
         </div>
 
         <!-- Date -->
         <div class="mb-3">
           <label for="departure-date" class="form-label mb-0">Salida</label>
           <input id="departure-date" name="departure-date" type="text" class="form-control flatpickr flatpickr-input" data-date-format="d M Y"
-            placeholder="Fecha de salida" readonly="readonly" />
+            placeholder="Fecha de salida" readonly="readonly" required/>
         </div>
 
         <!-- Occupant -->
@@ -107,7 +107,7 @@
           <label for="occupants" class="form-label mb-0">Huéspedes &amp; Habitaciones</label>
           <div class="dropdown guest-selector me-2">
             <input id="occupants" name="occupants" type="text" class="form-guest-selector form-control selection-result"
-              value="2 Huéspedes 1 Habitaciones" data-bs-auto-close="outside" data-bs-toggle="dropdown" />
+              value="2 Huéspedes 1 Habitaciones" data-bs-auto-close="outside" data-bs-toggle="dropdown" required/>
 
             <!-- dropdown items -->
             <ul class="dropdown-menu guest-selector-dropdown">

@@ -96,6 +96,10 @@ document.getElementById("submit-availability-btn").addEventListener("click", fun
   })
   .then(function(response) {
     if (response.ok) {
+      gtag("event", "generate_lead", {
+        currency: "USD",
+        value: 1
+      });
       // Display thank you message
       var thankYouMessage = document.getElementById("message");
       thankYouMessage.style.display = "block";

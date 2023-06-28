@@ -90,7 +90,7 @@ document.getElementById("submit-availability-btn").addEventListener("click", fun
   event.preventDefault(); // prevent default form submission behavior only after form is valid
 
   // Send form data using Fetch API
-  fetch("https://hooks.zapier.com/hooks/catch/8655269/3yqoykn/", {
+  fetch("https://hooks.zapier.com/hooks/catch/3042365/3d920hl/", {
     method: "POST",
     body: new FormData(form)
   })
